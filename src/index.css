@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    /* Academic Navy & Gold palette */
+    --background: 220 25% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep navy primary */
+    --primary: 222 47% 18%;
+    --primary-foreground: 48 96% 89%;
+
+    /* Warm cream secondary */
+    --secondary: 45 30% 94%;
+    --secondary-foreground: 222 47% 18%;
+
+    /* Muted slate */
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Amber/Gold accent */
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 222 47% 18%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(222, 47%, 11%) 0%, hsl(222, 47%, 22%) 50%, hsl(200, 60%, 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38, 92%, 50%) 0%, hsl(28, 87%, 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 10%, 36%) 0%, hsl(45, 30%, 98%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(220, 25%, 98%) 0%, hsl(45, 30%, 97%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(222 47% 11% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(222 47% 11% / 0.12);
+    --shadow-elevated: 0 20px 60px -15px hsl(222 47% 11% / 0.18);
+    --shadow-accent: 0 8px 24px -6px hsl(38 92% 50% / 0.35);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Sidebar */
+    --sidebar-background: 220 25% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 18%;
+    --sidebar-primary-foreground: 48 96% 89%;
+    --sidebar-accent: 45 30% 94%;
+    --sidebar-accent-foreground: 222 47% 18%;
+    --sidebar-border: 220 13% 88%;
+    --sidebar-ring: 222 47% 18%;
+
+    /* Extended palette */
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Institution colors - SA inspired */
+    --institution-primary: 172 66% 35%;
+    --institution-secondary: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 220 20% 95%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 220 20% 95%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 220 20% 95%;
+
+    --primary: 48 96% 70%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 220 20% 95%;
+
+    --muted: 222 30% 15%;
+    --muted-foreground: 220 14% 60%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 48 96% 70%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(222, 47%, 8%) 0%, hsl(222, 47%, 14%) 50%, hsl(200, 50%, 18%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38, 92%, 55%) 0%, hsl(28, 87%, 50%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222, 47%, 9%) 0%, hsl(222, 40%, 11%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
+    --shadow-accent: 0 8px 24px -6px hsl(38 92% 50% / 0.25);
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 220 20% 95%;
+    --sidebar-primary: 48 96% 70%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 30% 15%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 48 96% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
+  }
+
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .bg-soft-gradient {
+    background: var(--gradient-soft);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Decorative background patterns */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(hsl(var(--muted-foreground) / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply backdrop-blur-xl bg-background/70 border border-border/50;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-lg bg-card/80 border border-border/40;
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+}
